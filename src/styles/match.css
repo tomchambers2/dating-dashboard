@@ -1,0 +1,76 @@
+.stat {
+	text-align: center;
+}
+
+@-webkit-keyframes demo {
+    0% {
+        background-color: Yellow;
+    }
+    22% {
+        background-color: Yellow;
+    }
+    77% {
+        background-color: Red;
+    }
+    100% {
+        background-color: Yellow;
+    }
+}
+
+.match:hover {
+    cursor: pointer;
+    background: #F8F8F8;
+}
+
+.match.highlight {
+    -webkit-animation-name: demo;
+    -webkit-animation-duration: 900ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+}    
+
+.match.list-group-item {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid #EEEEEE;
+}
+
+.match .match-photo {
+    border-radius: 9999px !important;
+    margin-bottom: 6px;
+}
+
+.match .match-photo-thumb {
+    border-radius: 9999px !important;
+    height: 20px;
+    transition: all .2s ease-in-out;
+    position: relative;
+    z-index: 20;    
+    left: -20px;
+}
+
+.match .match-photo-thumb-control {
+    float: left;
+    position: relative;
+    z-index: 1000;    
+    height: 20px;
+    width: 20px;  
+}
+
+.match .match-photo-thumb-container {
+    float: left;
+}
+
+.match .match-photo-thumb-control:hover + .match-photo-thumb {
+    transform: scale(10);
+    z-index: 50;
+}
+
+.stat:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+.match.selected {
+    background: #EFEFEF;
+}

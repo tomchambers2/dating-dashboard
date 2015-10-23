@@ -1,0 +1,8 @@
+.message {
+	margin-bottom: 20px;
+}
+
+.message-icon {
+	height: 50px;
+	border-radius: 99999px !important;
+}

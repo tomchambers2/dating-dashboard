@@ -1,0 +1,23 @@
+.navbar {
+	background: #421865;
+	border: 0;
+	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+	margin-bottom: 0;
+	z-index: 50;
+	font-family: 'Righteous', cursive;
+	text-transform: uppercase; 
+}
+
+.navbar .logo {
+	height: 30px;
+	margin-top: -6px;
+}
+
+.navbar-default .navbar-brand {
+	color: #fff;
+}
+
+.matches-container, .messages-container {
+	height: 100%;
+	overflow-y: scroll;
+}

@@ -1,0 +1,16 @@
+.action .action-photo {
+	height: 30px;
+    border-radius: 9999px !important;
+}
+
+.actions table {
+	margin: 0;
+}
+
+.actions tr.like {
+	background: #CBF8DA;
+}
+
+.actions tr.dislike {
+	background: #FFDBD9;
+}
