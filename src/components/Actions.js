@@ -8,7 +8,7 @@ require('../styles/actions.css');
 var typeIcons = {
 	like: '<i class="fa fa-thumbs-o-up"></i>',
 	dislike: '<i class="fa fa-thumbs-o-down"></i>',
-	message: '<i class="fa fa-envelope-o-up"></i>'
+	message: '<i class="fa fa-envelope-o"></i>'
 }
 
 module.exports = React.createClass({
