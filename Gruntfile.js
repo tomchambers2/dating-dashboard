@@ -11,6 +11,8 @@ module.exports = function (grunt) {
   // Let *load-grunt-tasks* require everything
   require('load-grunt-tasks')(grunt);
 
+    grunt.loadNpmTasks('grunt-gh-pages');
+
   // Read configuration from package.json
   var pkgConfig = grunt.file.readJSON('package.json');
 
@@ -94,6 +96,13 @@ module.exports = function (grunt) {
       }
     },
 
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
+    },
+
     clean: {
       dist: {
         files: [{
@@ -105,6 +114,8 @@ module.exports = function (grunt) {
       }
     }
   });
+
+  grunt.registerTask('deploy', ['build','gh-pages'])
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {

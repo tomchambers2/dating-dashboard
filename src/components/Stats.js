@@ -28,12 +28,13 @@ module.exports = React.createClass({
 		    ]
 		};
 
-		var firstLines = Object.keys(this.props.stats.firstLines).map(function (key) {
-			console.log(key)
-			console.log(this.props.stats.firstLines[key])
-			return <tr><td>{key}</td><td>{this.props.stats.firstLines[key]}</td></tr>
-		}.bind(this))
-		//console.log(firstLines)
+		if (this.props.stats.firstLines) {
+			var firstLines = Object.keys(this.props.stats.firstLines).map(function (key) {
+				console.log(key)
+				console.log(this.props.stats.firstLines[key])
+				return <tr><td>{key}</td><td>{this.props.stats.firstLines[key]}</td></tr>
+			}.bind(this))
+		}
 
 		return (
 			<div className="row">

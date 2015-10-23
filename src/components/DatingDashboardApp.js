@@ -1,25 +1,25 @@
 'use strict';
 
 var React = require('react/addons');
-var io = require('socket.io-client');
-var socket = io('http://localhost:3000');
+//var io = require('socket.io-client');
+//var socket = io('http://localhost:3000');
 var _ = require('lodash');
 var ReactFireMixin = require('reactfire')
 var Firebase = require("firebase")
-var db = new Firebase("https://tinder-bot.firebaseio.com/")
+var db = new Firebase("https://tinder-bot.firebaseio.com/users").child('demo/data')
 
 var Matches = require('./Matches');
 var Messages = require('./Messages');
 var Stats = require('./Stats');
 var Actions = require('./Actions');
 
-socket.on('error', function(err) {
-    console.info('Websocket failed', err);
-});
+// socket.on('error', function(err) {
+//     console.info('Websocket failed', err);
+// });
 
-socket.on('disconnect', function() {
-    console.error('Error: lost websocket connection');
-});
+// socket.on('disconnect', function() {
+//     console.error('Error: lost websocket connection');
+// });
 
 var Matches = require('./matches');
 var Messages = require('./messages');
@@ -94,7 +94,7 @@ var DatingDashboardApp = React.createClass({
                 <nav className="navbar navbar-default">
                   <div className="container-fluid">
                     <div className="navbar-header">
-                      <a className="navbar-brand" href="#">
+                      <a className="navbar-brand" href="/demo">
                         <span><img src="images/calculon.png" className="logo" alt=""/> Robonova</span>
                       </a>
                     </div>
@@ -104,14 +104,14 @@ var DatingDashboardApp = React.createClass({
                     <div className="row content">
                         <div className="col-md-6 col-xs-12 matches-container">
                             <div className="panel matches">
-                                <div className="panel-heading"><h2>{this.state.matches && this.state.matches.length || 'No'} matches</h2></div>
+                                <div className="panel-heading"><h2>{this.state.matches && this.state.matches.length || 'No'} matches of {this.state.stats.matches}</h2></div>
                                 <div className="panel-body">
                                     <Matches
                                         matches={this.state.matches}
                                         matchId={this.state.matchId}
                                         selectMatch={this.selectMatch} />
                                     <div className="row text-center">
-                                        <div class="col-xs-12">
+                                        <div className="col-xs-12">
                                             <button className="btn-default btn" onClick={this.moreMatches}>More matches</button>
                                         </div>
                                     </div>                                        
@@ -135,7 +135,7 @@ var DatingDashboardApp = React.createClass({
                                 <div className="panel-body">
                                     <Actions actions={this.state.actions} />
                                     <div className="row text-center">
-                                        <div class="col-xs-12">
+                                        <div className="col-xs-12">
                                             <button className="btn-default btn" onClick={this.moreActions}>More actions</button>
                                         </div>
                                     </div>
