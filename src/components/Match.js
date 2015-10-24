@@ -47,7 +47,7 @@ module.exports = React.createClass({
 					<div className="bio col-xs-7">
 						<h3>{match.person.name}, {moment().diff(moment(match.person.birth_date), 'years')}</h3>
 						<p>{match.person.bio}</p>
-						<p><i>Matched {moment(match.created_date).fromNow()}</i></p>
+						<p><i>Matched {moment(match.created_date).fromNow()} | Last activity {moment(match.last_activity_date).fromNow()}</i></p>
 					</div>
 					<div className="stats col-xs-2 text-center">
 						<div className="row">
